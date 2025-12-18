@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EgresosActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="sans-serif-black"
+                android:text="REGISTRA TUS EGRESOS"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_fechaEgresos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_seleccionarFechaEgresos"
+                android:layout_width="193dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/mi_marron"
+                android:text="@string/tv_selecciondefecha"
+                android:textSize="10sp"
+                app:cornerRadius="5dp"
+                app:icon="@drawable/icono_calendario"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_sueldoAyudantes"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Ingresa el total de los sueldos" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_impuestos"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Ingresa los impuestos" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_servicioGas"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Servicio de gas" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_servicioAgua"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Servicio de agua" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_servicioLuz"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Servicio de luz" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="22dp"
+                android:text="TOTAL:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_totalEgresos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="sans-serif-black"
+                android:text="0.00"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_registroEgresos"
+                android:layout_width="209dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/mi_marron"
+                android:text="REGISTRAR"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/btn_backMainEgresos"
+                android:layout_width="209dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="1dp"
+                android:backgroundTint="@color/mi_marron"
+                android:text="REGRESAR"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

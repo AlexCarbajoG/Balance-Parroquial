@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.GastosMensualActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="sans-serif-black"
+                android:text="INGRESA TUS GASTOS MESUALES"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_fechaGastos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_seleccionarFechaGastos"
+                android:layout_width="193dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/mi_marron"
+                android:text="@string/tv_selecciondefecha"
+                android:textSize="10sp"
+                app:icon="@drawable/icono_calendario"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_verduras"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Gasto de verduras" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_taxiCamal"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Taxis Camal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_corteCarne"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Corte de carne" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_afiladores"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Afilados, Gasfiteros, ETC." />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_panes"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Gasto en panes" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_menudencia"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Menudencia" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_pescado"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Pescado" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_carneMolida"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Carne molida" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_pollos"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Pollos" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_abarrotes"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Abarrotes" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_recojoViveres"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Recojo de viveres" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_huevos"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Huevos" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_pasajes"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="pasajes" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_limpieza"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Artículos de limpieza" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_mantenimiento"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Mantenimiento" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_gastosExtras"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Gastos extras" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="30dp"
+                android:text="TOTAL:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_totalGastosMensuales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_registroGastosMensuales"
+                android:layout_width="209dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/mi_marron"
+                android:text="REGISTRAR"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/btn_backMainGastos"
+                android:layout_width="209dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dp"
+                android:backgroundTint="@color/mi_marron"
+                android:text="REGRESAR"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

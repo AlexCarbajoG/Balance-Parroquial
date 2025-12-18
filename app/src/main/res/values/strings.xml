@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">checking</string>
+    <string name="txtbalance">CREAR BALANCE</string>
+    <string name="txtIngresos">INGRESOS:</string>
+    <string name="btnEgresos">EGRESOS</string>
+    <string name="tv_selecciondefecha">SELECCIONAR FECHA</string>
+</resources>
