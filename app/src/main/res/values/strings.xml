@@ -4,4 +4,7 @@
     <string name="txtIngresos">INGRESOS:</string>
     <string name="btnEgresos">EGRESOS</string>
     <string name="tv_selecciondefecha">SELECCIONAR FECHA</string>
+    <string name="txtBalance">LISTA DE BALANCES</string>
+    <string name="txtregistro">CREAR REGISTRO MENSUAL\n</string>
+    <string name="balance_en_caja_parroquial">BALANCE EN CAJA PARROQUIAL</string>
 </resources>

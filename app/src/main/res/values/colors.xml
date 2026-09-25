@@ -4,4 +4,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="church_brown">#8D6E63</color>
     <color name="mi_marron">#8B4513</color>
+    <color name="mi_principal">#2E6B4D</color>
+    <color name="mi_segundo">#D97736</color>
+    <color name="mi_tercero">#E8EFE9</color>
+    <color name="mi_cuarto">#1E2629</color>
+    <color name="verde_suave">#2E7D32</color>
+    <color name="verde_suabe">#2E7D32</color>
+    <color name="verde_pastel_claro">#F1FAF4</color>
+    <color name="rojo_pastel_claro">#FFF4F1</color>
+    <color name="rojo_editar">#93000a</color>
 </resources>

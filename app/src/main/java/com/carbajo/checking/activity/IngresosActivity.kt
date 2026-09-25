@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.addTextChangedListener
 import com.carbajo.checking.modelos.IngresosModelo
 import com.carbajo.checking.activity.MainActivity
+import com.carbajo.checking.data.BalanceResumenRepository
 import com.carbajo.checking.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.Firebase
@@ -102,7 +103,16 @@ class IngresosActivity : AppCompatActivity() {
         val ref = Firebase.database.getReference("ingresos").child(fecha)
         ref.setValue(ingresos)
             .addOnSuccessListener {
-                Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show()
+
+                BalanceResumenRepository()
+                    .actualizarBalanceMes(fecha)
+
+                Toast.makeText(
+                    this,
+                    "Guardado",
+                    Toast.LENGTH_SHORT
+                ).show()
+
                 limpiarCampos()
             }
             .addOnFailureListener { e ->

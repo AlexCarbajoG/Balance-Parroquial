@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.firebase.bom)
     implementation(libs.firebase.database.ktx)
     implementation(libs.firebase.auth.ktx)
+    implementation(libs.play.services.auth)
     implementation(libs.androidx.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

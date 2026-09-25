@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,169 +9,496 @@
     android:layout_height="match_parent"
     tools:context=".activity.EgresosActivity">
 
+
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+
+            <!-- ======================== -->
+            <!-- ENCABEZADO -->
+            <!-- ======================== -->
 
             <TextView
-                android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="36dp"
                 android:fontFamily="sans-serif-black"
-                android:text="REGISTRA TUS EGRESOS"
-                android:textAlignment="center"
-                android:textColor="@color/black"
+                android:text="COMEDOR PARROQUIAL"
+                android:textColor="@color/mi_principal"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
 
             <TextView
-                android:id="@+id/txt_fechaEgresos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:text="TextView"
-                android:textAlignment="center"
-                android:textSize="20sp"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:text="EGRESOS"
+                android:textColor="@color/mi_cuarto"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btn_seleccionarFechaEgresos"
-                android:layout_width="193dp"
-                android:layout_height="40dp"
+
+            <!-- ======================== -->
+            <!-- CARD REGISTRO EGRESOS -->
+            <!-- ======================== -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEgresosRegistro"
+                android:layout_width="340dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="@color/mi_marron"
-                android:text="@string/tv_selecciondefecha"
-                android:textSize="10sp"
-                app:cornerRadius="5dp"
-                app:icon="@drawable/icono_calendario"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:layout_marginTop="17dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="8dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="14dp">
+
+
+                    <TextView
+                        android:id="@+id/txtTituloRegistroEgreso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="REGISTRA TUS EGRESOS :"
+                        android:textColor="@color/mi_marron"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <!-- CARD FECHA -->
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardFechaEgresos"
+                        android:layout_width="310dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="24dp"
+                        app:cardBackgroundColor="@color/material_dynamic_neutral90"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtTituloRegistroEgreso">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/txtTituloFechaEgresos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="14dp"
+                                android:layout_marginTop="10dp"
+                                android:text="FECHA DE REGISTRO:"
+                                android:textColor="@color/mi_cuarto"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:id="@+id/txt_fechaEgresos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="dd/mm/aa"
+                                android:textColor="@color/mi_cuarto"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="@id/txtTituloFechaEgresos"
+                                app:layout_constraintTop_toBottomOf="@id/txtTituloFechaEgresos" />
+
+
+                            <Button
+                                android:id="@+id/btn_seleccionarFechaEgresos"
+                                android:layout_width="69dp"
+                                android:layout_height="44dp"
+                                android:layout_marginEnd="16dp"
+                                android:backgroundTint="@color/mi_marron"
+                                app:cornerRadius="5dp"
+                                app:icon="@drawable/icono_calendario"
+                                app:iconTint="@color/white"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- ======================== -->
+            <!-- SUELDOS -->
+            <!-- ======================== -->
+
+            <TextView
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="18dp"
+                android:text="SUELDO DE AYUDANTES:"
+                android:textColor="@color/mi_cuarto"
+                android:textStyle="bold" />
+
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="350dp"
+                android:layout_width="340dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundColor="#F0F7F1"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:prefixText="S/. "
+                app:prefixTextColor="@color/mi_principal"
+                app:hintEnabled="false">
+
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txt_sueldoAyudantes"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Ingresa el total de los sueldos" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="0.00"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/mi_cuarto"
+                    android:textSize="20sp"
+                    android:textStyle="bold"  />
+
+
             </com.google.android.material.textfield.TextInputLayout>
 
+
+            <!-- ======================== -->
+            <!-- IMPUESTOS -->
+            <!-- ======================== -->
+
+            <TextView
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:text="IMPUESTOS:"
+                android:textColor="@color/mi_cuarto"
+                android:textStyle="bold" />
+
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="350dp"
+                android:layout_width="340dp"
                 android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal">
+                app:boxBackgroundColor="#F0F7F1"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:prefixText="S/. "
+                app:prefixTextColor="@color/mi_principal"
+                app:hintEnabled="false">
+
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txt_impuestos"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Ingresa los impuestos" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="0.00"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/mi_cuarto"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+
             </com.google.android.material.textfield.TextInputLayout>
 
+
+            <!-- ======================== -->
+            <!-- GAS -->
+            <!-- ======================== -->
+
+            <TextView
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:text="SERVICIO DE GAS:"
+                android:textColor="@color/mi_cuarto"
+                android:textStyle="bold" />
+
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="350dp"
+                android:layout_width="340dp"
                 android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal">
+                app:boxBackgroundColor="#F0F7F1"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:prefixText="S/. "
+                app:prefixTextColor="@color/mi_principal"
+                app:hintEnabled="false">
+
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txt_servicioGas"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Servicio de gas" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="0.00"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/mi_cuarto"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+
             </com.google.android.material.textfield.TextInputLayout>
 
+
+            <!-- ======================== -->
+            <!-- AGUA -->
+            <!-- ======================== -->
+
+            <TextView
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:text="SERVICIO DE AGUA:"
+                android:textColor="@color/mi_cuarto"
+                android:textStyle="bold" />
+
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="350dp"
+                android:layout_width="340dp"
                 android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal">
+                app:boxBackgroundColor="#F0F7F1"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:prefixText="S/. "
+                app:prefixTextColor="@color/mi_principal"
+                app:hintEnabled="false">
+
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txt_servicioAgua"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Servicio de agua" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="0.00"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/mi_cuarto"
+                    android:textSize="20sp"
+                    android:textStyle="bold"  />
+
+
             </com.google.android.material.textfield.TextInputLayout>
 
+
+            <!-- ======================== -->
+            <!-- LUZ -->
+            <!-- ======================== -->
+
+            <TextView
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:text="SERVICIO DE LUZ:"
+                android:textColor="@color/mi_cuarto"
+                android:textStyle="bold" />
+
+
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="350dp"
+                android:layout_width="340dp"
                 android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal">
+                app:boxBackgroundColor="#F0F7F1"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:prefixText="S/. "
+                app:prefixTextColor="@color/mi_principal"
+                app:hintEnabled="false">
+
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txt_servicioLuz"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Servicio de luz" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="0.00"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/mi_cuarto"
+                    android:textSize="20sp"
+                    android:textStyle="bold"  />
+
+
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginHorizontal="22dp"
-                android:text="TOTAL:"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/txt_totalEgresos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <!-- ======================== -->
+            <!-- TOTAL CONSOLIDADO -->
+            <!-- ======================== -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTotalEgresos"
+                android:layout_width="340dp"
+                android:layout_height="90dp"
                 android:layout_gravity="center_horizontal"
-                android:fontFamily="sans-serif-black"
-                android:text="0.00"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="#FFF4F1"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="8dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:id="@+id/txtTituloTotalEgresos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="TOTAL CONSOLIDADO:"
+                        android:textColor="@color/mi_marron"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/txtSimboloEgresos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="S/."
+                        android:textColor="@color/mi_marron"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/txtTituloTotalEgresos"
+                        app:layout_constraintTop_toBottomOf="@id/txtTituloTotalEgresos" />
+
+
+                    <TextView
+                        android:id="@+id/txt_totalEgresos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="0.00"
+                        android:textColor="@color/mi_marron"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/txtSimboloEgresos"
+                        app:layout_constraintStart_toEndOf="@id/txtSimboloEgresos"
+                        app:layout_constraintTop_toTopOf="@id/txtSimboloEgresos" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- ======================== -->
+            <!-- BOTÓN REGISTRAR -->
+            <!-- ======================== -->
 
             <Button
                 android:id="@+id/btn_registroEgresos"
-                android:layout_width="209dp"
-                android:layout_height="51dp"
+                android:layout_width="245dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="16dp"
                 android:backgroundTint="@color/mi_marron"
-                android:text="REGISTRAR"
-                android:textAlignment="center"
+                android:text="REGISTRAR EGRESOS"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
 
+
+            <!-- ======================== -->
+            <!-- BOTÓN REGRESAR -->
+            <!-- ======================== -->
+
             <Button
                 android:id="@+id/btn_backMainEgresos"
-                android:layout_width="209dp"
-                android:layout_height="51dp"
+                android:layout_width="245dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="1dp"
-                android:backgroundTint="@color/mi_marron"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/material_dynamic_neutral80"
                 android:text="REGRESAR"
-                android:textAlignment="center"
+                android:textColor="@color/mi_cuarto"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="10dp"
+                app:icon="@android:drawable/ic_menu_revert"
+                app:iconTint="@color/black" />
+
 
         </LinearLayout>
+
     </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

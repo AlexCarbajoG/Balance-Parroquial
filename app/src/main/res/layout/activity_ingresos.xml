@@ -8,137 +8,304 @@
     tools:context=".activity.IngresosActivity">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:text="INGRESOS"
+        android:textColor="@color/mi_cuarto"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="sans-serif-black"
-        android:text="REGISTRA TUS INGRESOS :"
-        android:textColor="@color/black"
+        android:text="COMEDOR PARROQUIAL"
+        android:textColor="@color/mi_principal"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_saldoMesAnterior"
-        android:layout_width="350dp"
+        android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="9dp"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="#F0F7F1"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:prefixText="S/. "
+        app:prefixTextColor="@color/mi_principal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_seleccionarFechaIngresos">
+        app:layout_constraintTop_toBottomOf="@id/textView18"
+        app:hintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txt_saldito"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Saldo mes anterior" />
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="0.00"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:textColor="@color/mi_cuarto"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_balanceActual"
-        android:layout_width="350dp"
+        android:layout_width="340dp"
         android:layout_height="60dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="9dp"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="#F0F7F1"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:prefixText="S/. "
+        app:prefixTextColor="@color/mi_principal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_saldoMesAnterior">
+        app:layout_constraintTop_toBottomOf="@id/textView21"
+        app:hintEnabled="false">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txt_balance"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Balance mes actual" />
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="0.00"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:textColor="@color/mi_cuarto"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginBottom="58dp"
-        android:text="Total:"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_registroIngreso"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_balanceActual" />
-
-    <TextView
-        android:id="@+id/txt_totalIngresos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="32dp"
-        android:text="0.00"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.162"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/txt_balanceActual" />
 
     <Button
         android:id="@+id/btn_registroIngreso"
-        android:layout_width="209dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@color/mi_marron"
-        android:text="REGISTRAR"
+        android:layout_width="245dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/verde_suave"
+        android:text="REGISTRAR INGRESOS"
         android:textSize="16sp"
         android:textStyle="bold"
         app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_totalIngresos"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/txt_fechaIngresos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="dd/mm/aa"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
     <Button
         android:id="@+id/btn_backIngreso"
-        android:layout_width="209dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/mi_marron"
+        android:layout_width="245dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/material_dynamic_neutral80"
         android:text="REGRESAR"
+        android:textColor="@color/mi_cuarto"
         android:textSize="16sp"
         android:textStyle="bold"
         app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_registroIngreso"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_registroIngreso" />
 
-    <Button
-        android:id="@+id/btn_seleccionarFechaIngresos"
-        android:layout_width="193dp"
-        android:layout_height="40dp"
-        android:backgroundTint="@color/mi_marron"
-        android:text="@string/tv_selecciondefecha"
-        android:textSize="10sp"
-        app:cornerRadius="5dp"
-        app:icon="@drawable/icono_calendario"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="340dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="17dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_fechaIngresos"
-        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="18dp"
+            android:paddingEnd="14dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-black"
+                android:text="REGISTRA TUS INGRESOS :"
+                android:textColor="@color/mi_principal"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="310dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/material_dynamic_neutral90"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txt_fechaIngresos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="dd/mm/aa"
+                        android:textColor="@color/mi_cuarto"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/textView17"
+                        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+                    <Button
+                        android:id="@+id/btn_seleccionarFechaIngresos"
+                        android:layout_width="69dp"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="@color/verde_suave"
+                        android:textSize="12sp"
+                        app:cornerRadius="5dp"
+                        app:icon="@drawable/icono_calendario"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_fechaIngresos"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/txt_fechaIngresos"
+                        app:layout_constraintTop_toTopOf="@+id/textView17"
+                        tools:ignore="TextSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="FECHA DE REGISTRO:"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.094"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:text="SALDO MES ANTERIOR:"
+        android:textColor="@color/mi_cuarto"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="BALANCE MES ACTUAL:"
+        android:textColor="@color/mi_cuarto"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_saldoMesAnterior" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="340dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/verde_suave"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_balanceActual">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="TOTAL CONSOLIDADO:"
+                android:textColor="@color/mi_cuarto"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="S/."
+                android:textColor="@color/mi_cuarto"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/txt_totalIngresos"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/txt_totalIngresos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textColor="@color/mi_cuarto"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textView22"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.226"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView22"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

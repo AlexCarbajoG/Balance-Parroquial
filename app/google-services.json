@@ -13,7 +13,20 @@
           "package_name": "com.carbajo.checking"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "864992678683-lshffgvnnk0k2upmh2871hubrg1mooj7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.carbajo.checking",
+            "certificate_hash": "b6e9720e3bf470e041db976cfdf1547604e0915a"
+          }
+        },
+        {
+          "client_id": "864992678683-b1f7vr0eehh7houovkh2cpr21c70a4uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB0SwLHHovZaFM3XfysiGpfg6tg5TLR--4"
@@ -21,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864992678683-b1f7vr0eehh7houovkh2cpr21c70a4uk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

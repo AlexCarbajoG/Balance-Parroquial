@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.VistaPreviaActivity">
+
+    <ScrollView
+        android:id="@+id/scrollVistaPrevia"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="32dp">
+
+
+            <!-- CABECERA -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COMEDOR PARROQUIAL"
+                android:textColor="@color/mi_principal"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="VISTA PREVIA DEL BALANCE"
+                android:textColor="@color/mi_cuarto"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtFechaVistaPrevia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="31-08-2026"
+                android:textColor="@color/mi_marron"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+
+            <!-- INGRESOS -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="18dp"
+                app:cardBackgroundColor="#FBFFFB"
+                app:strokeColor="#D5E8D8"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="INGRESOS"
+                            android:textColor="@color/mi_principal"
+                            android:textSize="15sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 conceptos"
+                            android:textColor="@color/mi_cuarto"
+                            android:textSize="11sp"/>
+
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/itemVistaSaldoAnterior"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaBalanceActual"
+                        layout="@layout/item_campo_balance"/>
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- EGRESOS -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="18dp"
+                app:cardBackgroundColor="#FFFDFC"
+                app:strokeColor="#E9DDD8"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="EGRESOS"
+                            android:textColor="@color/mi_marron"
+                            android:textSize="15sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5 conceptos"
+                            android:textSize="11sp"
+                            android:textColor="@color/mi_cuarto"/>
+
+                    </LinearLayout>
+
+
+                    <include
+                        android:id="@+id/itemVistaSueldos"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaImpuestos"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaGas"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaAgua"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaLuz"
+                        layout="@layout/item_campo_balance"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- GASTOS MENSUALES -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="18dp"
+                app:cardBackgroundColor="#FBFFFB"
+                app:strokeColor="#D5E8D8"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="GASTOS MENSUALES"
+                            android:textColor="@color/mi_principal"
+                            android:textSize="15sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="16 conceptos"
+                            android:textSize="11sp"
+                            android:textColor="@color/mi_cuarto"/>
+
+                    </LinearLayout>
+
+
+                    <!-- CARNICERIA Y PROTEINAS -->
+
+                    <include
+                        android:id="@+id/itemVistaVerduras"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaTaxiCamal"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaCarne"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaAfiladores"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaPanes"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaMenudencias"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaPescado"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaCarneMolida"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaPollos"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaAbarrotes"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaRecojoViveres"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaHuevos"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaPasajes"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaLimpieza"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaMantenimiento"
+                        layout="@layout/item_campo_balance"/>
+
+                    <include
+                        android:id="@+id/itemVistaGastosExtras"
+                        layout="@layout/item_campo_balance"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- BOTONES -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnEditarVistaPrevia"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/mi_marron"
+                    android:text="EDITAR"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp" />
+
+                <Button
+                    android:id="@+id/btnGuardarVistaPrevia"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/mi_principal"
+                    android:enabled="false"
+                    android:text="GUARDAR"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp" />
+
+                <Button
+                    android:id="@+id/btnRegresarVistaPrevia"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/mi_cuarto"
+                    android:text="REGRESAR"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

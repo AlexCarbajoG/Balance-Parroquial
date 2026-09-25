@@ -2,7 +2,7 @@ package com.carbajo.checking.pdf
 
 import android.content.ContentValues
 import android.content.Context
-import android.content.Intent
+
 import android.graphics.Paint
 import android.graphics.Typeface
 import android.graphics.pdf.PdfDocument
@@ -12,7 +12,6 @@ import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
-import com.carbajo.checking.modelos.BalanceModelo
 import java.text.DateFormatSymbols
 import java.util.Locale
 
@@ -106,13 +105,28 @@ object PdfGenerator {
             } catch (_: Exception) { yyyyMM }
         }
 
-        // Dibuja fila "label .... value" (mono espaciado para alinear)
+        val LABEL_X = MARGIN_H + 8f
+        val VALUE_X = pageInfo.pageWidth - MARGIN_H - 8f
+
         fun row(label: String, value: String, y: Float): Float {
-            p.typeface = mono; p.textSize = BODY_SIZE
-            canvas.drawText(label, MARGIN_H + 8f, y, p)
-            canvas.drawText(value, pageInfo.pageWidth - MARGIN_H - 120f, y, p)
+            p.typeface = mono
+            p.textSize = BODY_SIZE
+
+            // Label a la izquierda
+            p.textAlign = Paint.Align.LEFT
+            canvas.drawText(label, LABEL_X, y, p)
+
+            // Valor a la derecha
+            p.textAlign = Paint.Align.RIGHT
+            canvas.drawText(value, VALUE_X, y, p)
+
+            // ✅ IMPORTANTE: dejar el paint en LEFT para lo que sigue
+            p.textAlign = Paint.Align.LEFT
+
             return y + ROW_H
         }
+
+
 
         // ----- Encabezado (pegado a la derecha) -----
         var y = 50f

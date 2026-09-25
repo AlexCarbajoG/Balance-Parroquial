@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.addTextChangedListener
 import com.carbajo.checking.modelos.GastoMensualModelo
 import com.carbajo.checking.activity.MainActivity
+import com.carbajo.checking.data.BalanceResumenRepository
 import com.carbajo.checking.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.database
@@ -175,9 +176,17 @@ class GastosMensualActivity : AppCompatActivity() {
 
         ref.setValue(gastosMensual)
             .addOnSuccessListener {
-                Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show()
-                limpiarCampos()
 
+                BalanceResumenRepository()
+                    .actualizarBalanceMes(fechaGastos)
+
+                Toast.makeText(
+                    this,
+                    "Guardado",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                limpiarCampos()
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_LONG).show()

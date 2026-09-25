@@ -21,6 +21,8 @@ import com.carbajo.checking.pdf.PdfGenerator
 import com.google.firebase.database.FirebaseDatabase
 import android.content.ClipData
 import android.provider.OpenableColumns
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 
 class BalanceActivity : AppCompatActivity() {
@@ -76,9 +78,13 @@ class BalanceActivity : AppCompatActivity() {
         btn_regresarListaBalances = findViewById(R.id.btn_regresarListaBalances)
         btn_regresarListaBalances.setOnClickListener {
             regresarMain()
+            finish()
         }
 
+
+
     }
+
 
     private fun cargarBalances() {
         // 1) Trae todos los nodos
@@ -109,7 +115,15 @@ class BalanceActivity : AppCompatActivity() {
                     // 2) Unir por clave yyyy-MM (la unión de todas las llaves)
                     val todasLasFechas = (mapIngresos.keys + mapGastos.keys + mapEgresos.keys).toSortedSet()
 
+                    val formatoFecha = SimpleDateFormat(
+                        "dd-MM-yyyy",
+                        Locale("es", "PE")
+                    )
+
+                    formatoFecha.isLenient = false
+
                     val lista = todasLasFechas.map { key ->
+
                         val ing = mapIngresos[key]
                         val gas = mapGastos[key]
                         val egr = mapEgresos[key]
@@ -120,7 +134,15 @@ class BalanceActivity : AppCompatActivity() {
                             totalGastosMensuales = gas?.subtotal ?: 0.0,
                             totalEgresos = egr?.total ?: 0.0
                         )
-                    }.sortedByDescending { it.fechaId } // orden más reciente primero
+
+                    }.sortedByDescending { balance ->
+
+                        try {
+                            formatoFecha.parse(balance.fechaId)?.time ?: 0L
+                        } catch (e: Exception) {
+                            0L
+                        }
+                    }
 
                     adapter.submit(lista)
 

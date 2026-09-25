@@ -1,12 +1,16 @@
 package com.carbajo.checking.adaptador
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.carbajo.checking.R
+import com.carbajo.checking.activity.VistaPreviaActivity
+import com.carbajo.checking.activity.HorariosActivity
 import com.carbajo.checking.modelos.BalanceModelo
 import java.text.DateFormatSymbols
 import java.text.SimpleDateFormat
@@ -21,8 +25,9 @@ class BalanceAdapter(
     inner class VH(v: View) : RecyclerView.ViewHolder(v) {
         val txtNombreMes: TextView = v.findViewById(R.id.txt_nombreMes)
         val txtFechaMes: TextView  = v.findViewById(R.id.txt_fechaMes)
-        val btnDescarga: ImageButton = v.findViewById(R.id.btn_descarga)
-        val btn_compartir: ImageButton = v.findViewById(R.id.btn_compartir)
+        val btnDescarga: Button = v.findViewById(R.id.btn_descarga)
+        val btn_compartir: Button = v.findViewById(R.id.btn_compartir)
+        val btn_vistaPrevia: Button = v.findViewById(R.id.btn_vistaPrevia)
         // si luego usas el segundo ImageButton, agrégalo aquí
     }
 
@@ -39,6 +44,22 @@ class BalanceAdapter(
 
         holder.btnDescarga.setOnClickListener { onDescargarClick(item) }
         holder.btn_compartir.setOnClickListener { onCompartirClick(item) }
+        holder.btn_vistaPrevia.setOnClickListener {
+
+            val context = holder.itemView.context
+
+            val intent = Intent(
+                context,
+                VistaPreviaActivity::class.java
+            )
+
+            intent.putExtra(
+                "fechaId",
+                item.fechaId
+            )
+
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = items.size
@@ -48,18 +69,54 @@ class BalanceAdapter(
         notifyDataSetChanged()
     }
 
-    private fun nombreMes(yyyyMM: String): String {
-        // yyyy-MM -> "septiembre" en español
-        // Seguro para API < 26
-        val locale = Locale("es", "ES")
-        val sdf = SimpleDateFormat("yyyy-MM", locale)
-        val date = sdf.parse(yyyyMM) ?: return yyyyMM
-        val cal = Calendar.getInstance(locale).apply { time = date }
-        val monthIndex = cal.get(Calendar.MONTH) // 0..11
-        val monthName = DateFormatSymbols(locale).months[monthIndex]
-        // capitaliza primera letra si quieres:
-        return monthName.replaceFirstChar { if (it.isLowerCase()) it.titlecase(locale) else it.toString() }
+    private fun nombreMes(fechaId: String): String {
+
+        val locale =
+            Locale("es", "PE")
+
+        return try {
+
+            val formato =
+                SimpleDateFormat(
+                    "dd-MM-yyyy",
+                    locale
+                )
+
+            formato.isLenient = false
+
+            val fecha =
+                formato.parse(fechaId)
+                    ?: return fechaId
+
+            val calendario =
+                Calendar.getInstance(locale).apply {
+                    time = fecha
+                }
+
+            val indiceMes =
+                calendario.get(
+                    Calendar.MONTH
+                )
+
+            val nombre =
+                DateFormatSymbols(locale)
+                    .months[indiceMes]
+
+            nombre.replaceFirstChar {
+
+                if (it.isLowerCase()) {
+                    it.titlecase(locale)
+                } else {
+                    it.toString()
+                }
+            }
+
+        } catch (e: Exception) {
+
+            fechaId
+        }
     }
+
 
 
 

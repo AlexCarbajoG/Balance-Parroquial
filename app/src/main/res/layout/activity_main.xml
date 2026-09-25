@@ -8,23 +8,30 @@
     tools:context=".activity.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="413dp"
-        android:layout_height="736dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-1dp">
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="sans-serif-black"
-            android:text="ELIGE UNA OPCIÓN:"
-            android:textColor="@color/black"
-            android:textSize="24sp"
+            android:text="COMEDOR PARROQUIAL"
+            android:textColor="@color/mi_principal"
+            android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText" />
@@ -33,61 +40,292 @@
             android:id="@+id/btn_crearBalance"
             android:layout_width="340dp"
             android:layout_height="54dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="6dp"
             android:backgroundTint="@color/mi_marron"
-            android:text="@string/txtbalance"
-            android:textSize="20dp"
+            android:text="LISTA DE BALANCES"
+            android:textSize="16dp"
             android:textStyle="bold"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@id/textView19"
             tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/btn_crearIngresos"
-            android:layout_width="340dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@color/mi_marron"
-            android:text="INGRESOS"
-            android:textSize="20sp"
+            android:layout_width="165dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:backgroundTint="#F1FAF4"
+            android:text="REGISTRAR \n INGRESO"
+            android:textColor="@color/verde_suabe"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:cornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_crearBalance" />
+            app:layout_constraintTop_toBottomOf="@id/cardView" />
 
         <Button
             android:id="@+id/btn_egresos"
-            android:layout_width="340dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="28dp"
-            android:backgroundTint="@color/mi_marron"
-            android:text="@string/btnEgresos"
-            android:textSize="20dp"
+            android:layout_width="165dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#FFF4F1"
+            android:text="REGISTRAR \n EGRESO"
+            android:textColor="@color/mi_marron"
+            android:textSize="14dp"
             android:textStyle="bold"
             app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_crearIngresos"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.479"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_crearIngresos" />
+            app:layout_constraintHorizontal_bias="0.515"
+            app:layout_constraintStart_toEndOf="@id/btn_crearIngresos"
+            app:layout_constraintTop_toTopOf="@id/btn_crearIngresos"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextSizeCheck" />
 
         <Button
             android:id="@+id/btn_gastosMensuales"
             android:layout_width="340dp"
             android:layout_height="54dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="18dp"
             android:backgroundTint="@color/mi_marron"
-            android:text="GASTOS MENSUALES"
-            android:textSize="20sp"
+            android:text="REGISTRA TUS GASTOS MENSUALES"
+            android:textSize="16dp"
             android:textStyle="bold"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_egresos" />
+            app:layout_constraintTop_toBottomOf="@id/btn_crearIngresos" />
+
+        <Button
+            android:id="@+id/btn_crearRegistro"
+            android:layout_width="340dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/mi_marron"
+            android:text="CREAR REPORTE"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView20" />
+
+        <Button
+            android:id="@+id/btn_salir"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/mi_tercero"
+            android:gravity="center"
+            android:text="SALIR"
+            android:textColor="@color/mi_marron"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textView2"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="203dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="20dp"
+            android:text="Paz y Bien, Hna. Martha"
+            android:textColor="@color/mi_principal"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView12" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="INICIO"
+            android:textColor="@color/mi_cuarto"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/textView2"
+            app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+        <TextView
+            android:id="@+id/txt_mostrarFechaActual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Lunes, 7 de septiembre del 2026"
+            android:textColor="@color/mi_cuarto"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="345dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="18dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_mostrarFechaActual">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_balanceDelMes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="..."
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_mostrarBalanceMesActual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="..."
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/cardEgreso"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_balanceDelMes" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardIngreso"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="14dp"
+                    app:cardBackgroundColor="#F1FAF4"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/cardEgreso"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_mostrarBalanceMesActual">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+ Ingresos Mes"
+                            android:textColor="#2E7D32"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/txtIngresosMes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="..."
+                            android:textColor="#1B5E20"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardEgreso"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="14dp"
+                    app:cardBackgroundColor="#FFF4F1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cardIngreso"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_balanceDelMes">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="- Egresos Mes"
+                            android:textColor="#A13C22"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/txtEgresosMes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="..."
+                            android:textColor="#A13C22"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Historial de balances:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_gastosMensuales" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Generar horarios:"
+
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_crearBalance" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

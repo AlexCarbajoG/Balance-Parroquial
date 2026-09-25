@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/mi_tercero">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="600dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="28dp">
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:contentDescription="Capilla Virgen de Fátima"
+            android:src="@mipmap/capillita" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="COMEDOR PARROQUIAL"
+            android:textColor="@color/mi_principal"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Inicia sesión para continuar"
+            android:textColor="@color/mi_cuarto"
+            android:textSize="16sp" />
+        <EditText
+            android:id="@+id/loginEmail"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress"
+            android:singleLine="true" />
+        <EditText
+            android:id="@+id/loginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:autofillHints="password"
+            android:singleLine="true" />
+        <Button
+            android:id="@+id/loginEmailButton"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/mi_principal"
+            android:text="INGRESAR"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/loginGoogleButton"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/mi_marron"
+            android:text="CONTINUAR CON GOOGLE"
+            android:textStyle="bold" />
+        <ProgressBar
+            android:id="@+id/loginProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+    </LinearLayout>
+</ScrollView>
