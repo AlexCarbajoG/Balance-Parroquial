@@ -1,5 +1,7 @@
 package com.carbajo.checking.modelos
 
+import com.carbajo.checking.domain.BalanceCalculator
+
 data class BalanceModelo(
     val fechaId: String,              // "yyyy-MM"
     val totalIngresos: Double,        // ingresos.totalIngresos()
@@ -7,5 +9,9 @@ data class BalanceModelo(
     val totalEgresos: Double          // egresos.total
 ) {
     val utilidad: Double
-        get() = totalIngresos - totalGastosMensuales - totalEgresos
+        get() = BalanceCalculator.calcularUtilidad(
+            totalIngresos = totalIngresos,
+            totalGastosMensuales = totalGastosMensuales,
+            totalEgresos = totalEgresos
+        )
 }
