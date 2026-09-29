@@ -70,11 +70,7 @@ Balance Parroquial busca facilitar el control financiero mensual de una parroqui
 - JUnit
 - Espresso
 
-## Arquitectura
 
-El proyecto separa las responsabilidades principales de la aplicación para facilitar su mantenimiento, pruebas y evolución.
-
-```text
 ## Arquitectura actual
 
 Actualmente el proyecto utiliza una arquitectura en evolución, donde algunas Activities todavía acceden directamente a Firebase, mientras que parte de la lógica de negocio ya se encuentra separada.
@@ -100,9 +96,9 @@ Actualmente el proyecto utiliza una arquitectura en evolución, donde algunas Ac
                  │       Domain        │
                  │  BalanceCalculator  │
                  └─────────────────────┘
+```
 
-
-
+```text
 app/
 └── src/main/java/com/carbajo/checking/
     ├── activity/
@@ -112,6 +108,7 @@ app/
     ├── modelos/
     └── pdf/
 ```
+
 ## Calidad y pruebas
 
 El proyecto incluye pruebas unitarias para validar la lógica central de cálculo de balances.
