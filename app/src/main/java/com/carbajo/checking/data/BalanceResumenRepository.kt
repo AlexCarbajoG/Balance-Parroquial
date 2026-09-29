@@ -5,6 +5,7 @@ import com.carbajo.checking.modelos.EgresosModelo
 import com.carbajo.checking.modelos.GastoMensualModelo
 import com.carbajo.checking.modelos.IngresosModelo
 import com.google.firebase.database.FirebaseDatabase
+import com.carbajo.checking.domain.BalanceCalculator
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -100,10 +101,11 @@ class BalanceResumenRepository {
                                         val totalEgresos =
                                             egresos.total
 
-                                        val utilidad =
-                                            totalIngresos -
-                                                    totalGastosMensuales -
-                                                    totalEgresos
+                                        val utilidad = BalanceCalculator.calcularUtilidad(
+                                            totalIngresos = totalIngresos,
+                                            totalGastosMensuales = totalGastosMensuales,
+                                            totalEgresos = totalEgresos
+                                        )
 
 
                                         val balanceResumen =
