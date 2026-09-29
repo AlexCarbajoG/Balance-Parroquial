@@ -75,31 +75,31 @@ Balance Parroquial busca facilitar el control financiero mensual de una parroqui
 El proyecto separa las responsabilidades principales de la aplicación para facilitar su mantenimiento, pruebas y evolución.
 
 ```text
+## Arquitectura actual
+
+Actualmente el proyecto utiliza una arquitectura en evolución, donde algunas Activities todavía acceden directamente a Firebase, mientras que parte de la lógica de negocio ya se encuentra separada.
+
+```text
 ┌─────────────────────┐
 │      Activities     │
 │   Interfaz / UI     │
 └──────────┬──────────┘
            │
-           ▼
-┌─────────────────────┐
-│       Domain        │
-│  Reglas de negocio  │
-│  BalanceCalculator  │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│     Repository      │
-│ Acceso y gestión de │
-│       datos         │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│      Firebase       │
-│ Realtime Database   │
-│   Authentication    │
-└─────────────────────┘
+      ┌────┴─────┐
+      │          │
+      ▼          ▼
+┌────────────┐  ┌─────────────────────┐
+│  Firebase  │  │     Repository      │
+│ acceso     │  │ BalanceResumenRepo  │
+│ directo    │  └──────────┬──────────┘
+└────────────┘             │
+                           ├──────────────► Firebase
+                           │
+                           ▼
+                 ┌─────────────────────┐
+                 │       Domain        │
+                 │  BalanceCalculator  │
+                 └─────────────────────┘
 
 
 
@@ -124,8 +124,11 @@ Actualmente se verifican escenarios como:
 - Diferentes combinaciones de ingresos y egresos.
 
 Las pruebas se ejecutan con JUnit mediante:
-
+### Windows
     .\gradlew testDebugUnitTest
+### Linux/macOS
+    chmod +x gradlew
+    ./gradlew testDebugUnitTest
 
 ## Integración continua
 
