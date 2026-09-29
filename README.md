@@ -1,10 +1,45 @@
 # Balance Parroquial
 
-Aplicación Android desarrollada en Kotlin para la gestión de ingresos, egresos, gastos mensuales y balances de una parroquia.
+Aplicación Android desarrollada en Kotlin para la gestión y control financiero mensual de una parroquia.
+
+Permite registrar ingresos, egresos y gastos mensuales, calcular balances, consultar históricos y generar reportes PDF, utilizando Firebase como backend.
+
+[![Android CI](https://github.com/AlexCarbajoG/Balance-Parroquial/actions/workflows/android-ci.yml/badge.svg?branch=main)](https://github.com/AlexCarbajoG/Balance-Parroquial/actions/workflows/android-ci.yml)
+![Kotlin](https://img.shields.io/badge/Kotlin-Android-blue)
+![Firebase](https://img.shields.io/badge/Firebase-Realtime%20Database-orange)
+![Release](https://img.shields.io/badge/Release-v1.0.0-green)
+
+---
+
+## ¿Qué problema resuelve?
+
+El control financiero mensual puede volverse difícil cuando los ingresos, egresos, gastos y balances se administran de forma separada o manual.
+
+Balance Parroquial centraliza esta información en una aplicación Android que permite registrar movimientos, calcular resultados mensuales y generar documentos de respaldo en formato PDF.
 
 ## Objetivo del proyecto
 
 Balance Parroquial busca facilitar el control financiero mensual de una parroquia, permitiendo registrar movimientos económicos, consultar balances y generar reportes en formato PDF.
+
+## Capturas de la aplicación
+
+### Inicio de sesión
+
+| Login | Pantalla principal |
+|---|---|
+| <img src="docs/images/login.png" width="280"/> | <img src="docs/images/home.png" width="280"/> |
+
+### Gestión financiera
+
+| Registro de ingresos | Historial de balances |
+|---|---|
+| <img src="docs/images/ingresos.png" width="280"/> | <img src="docs/images/balance.png" width="280"/> |
+
+### Reportes y documentos
+
+| Generación de reporte | Vista previa PDF |
+|---|---|
+| <img src="docs/images/pdf-generator.png" width="280"/> | <img src="docs/images/pdf-preview.png" width="280"/> |
 
 ## Funcionalidades principales
 
@@ -35,13 +70,98 @@ Balance Parroquial busca facilitar el control financiero mensual de una parroqui
 - JUnit
 - Espresso
 
-## Estructura general del proyecto
+## Arquitectura
+
+El proyecto separa las responsabilidades principales de la aplicación para facilitar su mantenimiento, pruebas y evolución.
 
 ```text
+┌─────────────────────┐
+│      Activities     │
+│   Interfaz / UI     │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│       Domain        │
+│  Reglas de negocio  │
+│  BalanceCalculator  │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│     Repository      │
+│ Acceso y gestión de │
+│       datos         │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│      Firebase       │
+│ Realtime Database   │
+│   Authentication    │
+└─────────────────────┘
+
+
+
 app/
 └── src/main/java/com/carbajo/checking/
     ├── activity/
     ├── adaptador/
     ├── data/
+    ├── domain/
     ├── modelos/
     └── pdf/
+```
+## Calidad y pruebas
+
+El proyecto incluye pruebas unitarias para validar la lógica central de cálculo de balances.
+
+Actualmente se verifican escenarios como:
+
+- Balance positivo.
+- Balance igual a cero.
+- Balance negativo.
+- Diferentes combinaciones de ingresos y egresos.
+
+Las pruebas se ejecutan con JUnit mediante:
+
+    .\gradlew testDebugUnitTest
+
+## Integración continua
+
+El proyecto utiliza GitHub Actions para validar automáticamente cada Pull Request y cada cambio enviado a `main`.
+
+El workflow ejecuta:
+
+1. Configuración de Java.
+2. Preparación de Gradle.
+3. Ejecución de pruebas unitarias.
+4. Compilación del APK debug.
+
+Workflow:
+
+    .github/workflows/android-ci.yml
+
+## Roadmap
+
+- [x] Registro de ingresos.
+- [x] Registro de egresos.
+- [x] Gestión de gastos mensuales.
+- [x] Historial de balances.
+- [x] Generación de reportes PDF.
+- [x] Autenticación con Google.
+- [x] Firebase Realtime Database.
+- [x] Pruebas unitarias.
+- [x] GitHub Actions CI.
+- [ ] Ampliar cobertura de pruebas.
+- [ ] Mejorar arquitectura por capas.
+- [ ] Generar APK firmado para distribución.
+- [ ] Automatizar publicación de releases.
+
+## Release actual
+
+Versión estable actual:
+
+    v1.0.0
+
+La release incluye documentación, pruebas unitarias, refactor de lógica de balance e integración continua con GitHub Actions.
