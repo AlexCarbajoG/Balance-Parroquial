@@ -70,9 +70,10 @@ Balance Parroquial busca facilitar el control financiero mensual de una parroqui
 - JUnit
 - Espresso
 
-## Arquitectura
 
-El proyecto separa las responsabilidades principales de la aplicación para facilitar su mantenimiento, pruebas y evolución.
+## Arquitectura actual
+
+Actualmente el proyecto utiliza una arquitectura en evolución, donde algunas Activities todavía acceden directamente a Firebase, mientras que parte de la lógica de negocio ya se encuentra separada.
 
 ```text
 ┌─────────────────────┐
@@ -80,29 +81,24 @@ El proyecto separa las responsabilidades principales de la aplicación para faci
 │   Interfaz / UI     │
 └──────────┬──────────┘
            │
-           ▼
-┌─────────────────────┐
-│       Domain        │
-│  Reglas de negocio  │
-│  BalanceCalculator  │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│     Repository      │
-│ Acceso y gestión de │
-│       datos         │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│      Firebase       │
-│ Realtime Database   │
-│   Authentication    │
-└─────────────────────┘
+      ┌────┴─────┐
+      │          │
+      ▼          ▼
+┌────────────┐  ┌─────────────────────┐
+│  Firebase  │  │     Repository      │
+│ acceso     │  │ BalanceResumenRepo  │
+│ directo    │  └──────────┬──────────┘
+└────────────┘             │
+                           ├──────────────► Firebase
+                           │
+                           ▼
+                 ┌─────────────────────┐
+                 │       Domain        │
+                 │  BalanceCalculator  │
+                 └─────────────────────┘
+```
 
-
-
+```text
 app/
 └── src/main/java/com/carbajo/checking/
     ├── activity/
@@ -112,6 +108,7 @@ app/
     ├── modelos/
     └── pdf/
 ```
+
 ## Calidad y pruebas
 
 El proyecto incluye pruebas unitarias para validar la lógica central de cálculo de balances.
@@ -124,8 +121,11 @@ Actualmente se verifican escenarios como:
 - Diferentes combinaciones de ingresos y egresos.
 
 Las pruebas se ejecutan con JUnit mediante:
-
+### Windows
     .\gradlew testDebugUnitTest
+### Linux/macOS
+    chmod +x gradlew
+    ./gradlew testDebugUnitTest
 
 ## Integración continua
 
